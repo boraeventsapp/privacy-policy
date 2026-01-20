@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso e Serviços | bora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet: #6231ED;
+      --gold: #FBBF24;
+      --midnight: #1F2937;
+      --soft-gray: #F3F4F6;
+      --white: #FAFAFA;
+      --aqua: #A5F3FC;
+      --pink: #F472B6;
+      --green: #6A8D73;
+      --black: #1C1C1C;
+      --radius: 16px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(165, 243, 252, 0.35), transparent 30%),
+                  radial-gradient(circle at 80% 10%, rgba(244, 114, 182, 0.25), transparent 30%),
+                  linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      color: var(--midnight);
+      line-height: 1.7;
+      padding: 0 16px 48px;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 32px auto 20px;
+      background: linear-gradient(135deg, var(--violet), #4b2bd6 35%, var(--gold) 110%);
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    header::after, header::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.18;
+    }
+    header::after {
+      width: 260px;
+      height: 260px;
+      background: var(--aqua);
+      right: -80px;
+      top: -60px;
+    }
+    header::before {
+      width: 180px;
+      height: 180px;
+      background: var(--pink);
+      left: -60px;
+      bottom: -40px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 14px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.16);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', 'Montserrat', serif;
+      margin: 18px 0 8px;
+      font-size: clamp(26px, 4vw, 38px);
+      letter-spacing: -0.4px;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      font-size: 17px;
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    nav.toc {
+      background: white;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5e7eb;
+      position: sticky;
+      top: 12px;
+    }
+
+    nav.toc h2 {
+      font-size: 16px;
+      margin: 0 0 12px;
+      color: var(--violet);
+    }
+
+    nav.toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      color: var(--midnight);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav.toc a:hover { color: var(--violet); }
+
+    section {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5e7eb;
+    }
+
+    section h3 {
+      margin: 0 0 10px;
+      color: var(--violet);
+      font-size: 20px;
+    }
+
+    section p { margin: 6px 0 12px; }
+
+    .tagline {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: 700;
+      color: var(--violet);
+      padding: 8px 12px;
+      background: rgba(98, 49, 237, 0.08);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(98, 49, 237, 0.12);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 4px 0 14px;
+    }
+
+    li { margin: 6px 0; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 12px 0 4px;
+    }
+
+    .pill {
+      background: var(--soft-gray);
+      border-radius: 14px;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      font-weight: 600;
+      color: var(--midnight);
+    }
+
+    .highlight {
+      border-left: 4px solid var(--gold);
+      padding-left: 12px;
+      margin: 12px 0;
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.12), rgba(98, 49, 237, 0.06));
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 8px auto 0;
+      text-align: center;
+      color: #4b5563;
+      font-size: 14px;
+      padding: 18px 0 26px;
+    }
+
+    @media (min-width: 960px) {
+      main {
+        grid-template-columns: 280px 1fr;
+        align-items: start;
+      }
+      section { padding: 28px; }
+      nav.toc { position: sticky; top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="dot"></span> bora · Termos e Serviços</div>
+    <h1>Termos de Uso e Serviços do bora</h1>
+    <p class="subtitle">
+      Obrigado por usar o bora, a plataforma para criar, gerenciar e compartilhar eventos com quem importa.
+      Este documento explica as condições para uso do aplicativo, regras de assinatura, responsabilidades e como tratamos seus dados.
+    </p>
+    <div class="meta">
+      <div class="chip">Última atualização: 19/01/2026</div>
+      <div class="chip">Aplicável para iOS, Android e web (convites)</div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc" aria-label="Sumário">
+      <h2>Sumário rápido</h2>
+      <a href="#1">1. Quem somos e objeto</a>
+      <a href="#2">2. Aceitação e elegibilidade</a>
+      <a href="#3">3. Conta e segurança</a>
+      <a href="#4">4. Serviços do bora</a>
+      <a href="#5">5. Planos e pagamentos</a>
+      <a href="#6">6. Responsabilidades do usuário</a>
+      <a href="#7">7. Privacidade e dados</a>
+      <a href="#8">8. Compartilhamento com terceiros</a>
+      <a href="#9">9. Segurança e riscos</a>
+      <a href="#10">10. Propriedade intelectual</a>
+      <a href="#11">11. Suspensão e encerramento</a>
+      <a href="#12">12. Isenções e limites</a>
+      <a href="#13">13. Suporte e contato</a>
+      <a href="#14">14. Atualizações</a>
+    </nav>
+
+    <div>
+      <section id="1">
+        <div class="tagline">1. Quem somos e objeto</div>
+        <p>
+          O bora é uma aplicação da <strong>bora eventos</strong> (“Nós”) para organização e gestão de eventos.
+          Você pode criar convites digitais, compartilhar localização, controlar presença (RSVP e check-in),
+          enviar comunicados, registrar fotos e acompanhar detalhes dos convidados.
+        </p>
+        <div class="card-grid">
+          <div class="pill">Criação e edição de eventos e telas personalizadas</div>
+          <div class="pill">Convites por link/QR Code e integração com calendários</div>
+          <div class="pill">Mapa do evento (requere localização do local)</div>
+          <div class="pill">Uploads de mídia (fotos, vídeos e documentos)</div>
+          <div class="pill">Gestão de convidados, listas e RSVPs</div>
+          <div class="pill">Planos pagos para recursos avançados</div>
+        </div>
+      </section>
+
+      <section id="2">
+        <div class="tagline">2. Aceitação e elegibilidade</div>
+        <p>
+          Ao criar uma conta ou usar o aplicativo, você declara ter lido e aceitado estes Termos.
+          O uso é permitido para pessoas com 18 anos ou mais (ou com autorização de responsáveis
+          conforme a legislação local). Caso não concorde, não utilize o serviço.
+        </p>
+      </section>
+
+      <section id="3">
+        <div class="tagline">3. Conta e segurança</div>
+        <ul>
+          <li>Você deve fornecer informações verdadeiras e manter seus dados de login confidenciais.</li>
+          <li>Notifique-nos imediatamente sobre acessos não autorizados: <strong>boraeventsapp@gmail.com</strong>.</li>
+          <li>O titular da conta é responsável por ações realizadas no app, inclusive ao compartilhar convites ou QR Codes.</li>
+        </ul>
+      </section>
+
+      <section id="4">
+        <div class="tagline">4. Serviços do bora</div>
+        <p><strong>Funcionalidades principais:</strong></p>
+        <ul>
+          <li>Criação/edição de eventos com data, local, descrição, fotos, galerias, contagem regressiva e telas personalizadas.</li>
+          <li>Convites e compartilhamento por links, QR Codes e calendário (Google, Apple, Outlook).</li>
+          <li>Gestão de convidados, importação de listas, envio de comunicados e controle de presença (RSVP e check-in).</li>
+          <li>Uploads de mídias e documentos do evento, inclusive fotos tiradas pelo app.</li>
+          <li>Visualização de mapas do local (requer endereço; pode requerer permissão de localização para navegação do convidado).</li>
+        </ul>
+        <p><strong>Serviços de terceiros:</strong> usamos provedores de mapas (ex.: Google Maps), envio de mensagens (ex.: e-mail/SMS),
+          armazenamento e provedores de pagamento (PIX). Esses serviços têm políticas próprias.</p>
+      </section>
+
+      <section id="5">
+        <div class="tagline">5. Planos, valores e pagamentos</div>
+        <ul>
+          <li>Oferecemos planos pagos (ex.: Platinum e Platinum+) com cobrança recorrente mensal ou anual. Valores podem ser atualizados com aviso prévio.</li>
+          <li>Pagamentos são processados via PIX. A confirmação pode levar até 1 dia após o envio.</li>
+          <li>A assinatura é liberada após confirmação do pagamento. Sem pagamento confirmado, a conta permanece com recursos limitados.</li>
+          <li>Cancelamento: você pode cancelar cobranças pendentes pelo app antes da confirmação. Para cancelamento de uma assinatura ativa,
+            contate o suporte. Reembolsos seguem o Código de Defesa do Consumidor quando aplicável.</li>
+          <li>Inadimplência ou chargeback podem resultar em suspensão dos recursos pagos.</li>
+        </ul>
+      </section>
+
+      <section id="6">
+        <div class="tagline">6. Responsabilidades do usuário</div>
+        <ul>
+          <li>Você é responsável pelo conteúdo de eventos, convites e mídias enviadas.</li>
+          <li>Proibido publicar conteúdo ilegal, ofensivo, discriminatório, que viole privacidade, propriedade intelectual ou incentivos a atividades ilícitas.</li>
+          <li>Ao subir imagens, vídeos ou textos, você declara ter direito de usá-los e autoriza seu uso para exibição aos convidados do evento.</li>
+          <li>Não é permitido tentar explorar vulnerabilidades, burlar limites de uso ou realizar engenharia reversa do app.</li>
+        </ul>
+      </section>
+
+      <section id="7">
+        <div class="tagline">7. Privacidade e dados pessoais</div>
+        <div class="highlight">
+          Resumo de coleta: dados de conta (nome, e-mail, senha), dados de eventos e convidados, mídias enviadas,
+          logs técnicos (IP, dispositivo, data/hora), localização do evento e, quando permitido, localização aproximada do usuário para navegação.
+        </div>
+        <ul>
+          <li><strong>Finalidades:</strong> operar o app, criar convites, exibir mapas, validar presença, prevenir fraudes,
+            cumprir requisitos legais e oferecer suporte.</li>
+          <li><strong>Permissões do dispositivo:</strong> câmera e microfone (para ler QR Codes ou gravar mídia), armazenamento/galeria,
+            localização (para mapa e rotas), documentos (para importação de listas).</li>
+          <li><strong>Base legal:</strong> execução do contrato (prestação do serviço), legítimo interesse (segurança e melhoria),
+            e consentimento quando solicitado (por exemplo, para permissões do dispositivo).</li>
+          <li><strong>Retenção:</strong> mantemos dados enquanto a conta estiver ativa ou pelo período necessário para obrigações legais
+            e prevenção de fraudes. Você pode solicitar exclusão ou portabilidade pelo suporte.</li>
+          <li><strong>Direitos:</strong> acesso, correção, exclusão, revogação de consentimento e oposição a tratamentos
+            que não afetem a execução do serviço. Solicite em <strong>boraeventsapp@gmail.com</strong>.</li>
+        </ul>
+        <p>Para detalhes adicionais de privacidade ou exercício de direitos, fale com o suporte.</p>
+      </section>
+
+      <section id="8">
+        <div class="tagline">8. Compartilhamento com terceiros</div>
+        <ul>
+          <li><strong>Infraestrutura e armazenamento:</strong> provedores de nuvem para hospedar e processar dados.</li>
+          <li><strong>Pagamentos:</strong> processadores de pagamento/PIX para validação de cobranças.</li>
+          <li><strong>Mapas e geolocalização:</strong> APIs de mapa para exibir endereços e rotas.</li>
+          <li><strong>Comunicação:</strong> serviços de e-mail/SMS/push para enviar convites e alertas.</li>
+          <li><strong>Conformidade legal:</strong> podemos compartilhar dados mediante ordens judiciais ou para defender direitos do bora.</li>
+        </ul>
+      </section>
+
+      <section id="9">
+        <div class="tagline">9. Segurança e riscos</div>
+        <ul>
+          <li>Adotamos práticas razoáveis de segurança (criptografia em trânsito, controles de acesso, monitoramento de incidentes),
+            mas nenhum serviço online é 100% imune. Use senhas fortes e mantenha seu dispositivo atualizado.</li>
+          <li>Não nos responsabilizamos por danos causados por fatores fora do nosso controle (falhas de internet, dispositivos comprometidos, ações de terceiros).</li>
+        </ul>
+      </section>
+
+      <section id="10">
+        <div class="tagline">10. Propriedade intelectual</div>
+        <p>
+          O app, código, identidade visual, nome “bora” e materiais correlatos são de nossa titularidade
+          ou licenciados. Você recebe licença limitada, não exclusiva e revogável para usar o app conforme estes Termos.
+        </p>
+      </section>
+
+      <section id="11">
+        <div class="tagline">11. Suspensão e encerramento</div>
+        <ul>
+          <li>Podemos suspender ou encerrar contas em caso de violação destes Termos, uso abusivo ou solicitações legais.</li>
+          <li>Você pode encerrar a conta a qualquer momento. Alguns dados podem ser mantidos para cumprimento legal ou defesa de direitos.</li>
+        </ul>
+      </section>
+
+      <section id="12">
+        <div class="tagline">12. Isenções e limites de responsabilidade</div>
+        <ul>
+          <li>O bora é fornecido “como está”, sem garantias de disponibilidade ininterrupta.</li>
+          <li>Na extensão permitida por lei, nossa responsabilidade total fica limitada ao valor pago nos últimos 12 meses,
+            e não respondemos por danos indiretos ou lucros cessantes.</li>
+        </ul>
+      </section>
+
+      <section id="13">
+        <div class="tagline">13. Suporte e contato</div>
+        <p>Dúvidas, solicitações de direitos ou questões de privacidade: <strong>boraeventsapp@gmail.com</strong>.</p>
+        <p>Atendimento em dias úteis, horário comercial (Brasília). Inclua no assunto: “Termos e Serviços”.</p>
+      </section>
+
+      <section id="14">
+        <div class="tagline">14. Atualizações destes Termos</div>
+        <p>
+          Podemos atualizar estes Termos para refletir mudanças legais, de produto ou de preços.
+          Quando alterações forem relevantes, informaremos no app ou por e-mail. A continuidade de uso após a comunicação
+          significa concordância com a nova versão.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    bora eventos · Feito para aproximar pessoas. © 2026
+  </footer>
+</body>
+</html>
